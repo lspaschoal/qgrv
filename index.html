@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exigências de vistos para estrangeiros no Brasil</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <main>
+        <div class="seletor">
+            <label for="nome-pais">País: </label>
+            <select name="nome-pais" id="nome" onchange="consulta(this.value);">
+                <option value='default' selected>Selecione o país</option>
+                <!-- os nomes dos países são preenchidos pela função setSeletor() -->
+            </select>
+            <button onclick="limpar()">Limpar</button>
+        </div>
+        <fieldset class="resultado">
+            <legend>Passaporte Diplomático</legend>
+            <span id="padip"></span>
+        </fieldset>
+        <fieldset class="resultado">
+            <legend>Passaporte Oficial</legend>
+            <span id="pasof"></span>
+        </fieldset>
+        <fieldset class="resultado">
+            <legend>Visto de Visita</legend>
+            <span id="vivis"></span>
+        </fieldset>
+         <fieldset class="resultado">
+            <legend>Marítimo</legend>
+            <span id="maritimo"></span>
+        </fieldset>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
