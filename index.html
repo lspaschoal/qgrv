@@ -9,32 +9,110 @@
 
 <body>
     <main>
-        <div class="seletor">
-            <label for="nome-pais">País: </label>
-            <select name="nome-pais" id="nome" onchange="consulta(this.value);">
-                <option value='default' selected>Selecione o país</option>
-                <!-- os nomes dos países são preenchidos pela função setSeletor() -->
-            </select>
-            <button onclick="limpar()">Limpar</button>
+        <header>
+            <div class="seletor">
+                <div class="linha-superior">
+                    <label for="nome-pais">País: </label>
+                    <select name="nome-pais" id="pais" onchange="consulta(this.value);">
+                        <option value='default' selected>Selecione o país</option>
+                        <!-- os nomes dos países são preenchidos pela função setSeletor() -->
+                    </select>
+                    <button onclick="limpar()">Limpar</button>
+                    <img id="bandeira" src="bandeiras/branca.png" alt="Bandeira do País Selecionado" hidden>
+                </div>
+                <div class="versao">
+                    Publicação do QGRV: 14/02/2022
+                </div>
+            </div>
+            <nav>
+                <span class="lbl-links">Links úteis: </span>
+                <a href="https://servicos.dpf.gov.br/sismigra-internet/faces/publico/verificarProtocolo/verificarProtocolo.seam"
+                    target="_blank" rel="noopener noreferrer"><button class="btn-link">SISMIGRA - Verificar
+                        Protocolo</button></a>
+                <a href="https://www.gov.br/mre/pt-br/assuntos/portal-consular/vistos/informacoes-sobre-vistos-para-estrangeiros-viajarem-ao-brasil#voceprecisa"
+                    target="_blank" rel="noopener noreferrer"><button class="btn-link">Portal Consular
+                        (QGRV)</button></a>
+                <!--
+                    <a href="https://www.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB:11300:0::NO::P11300_INSTRUMENT_ID:312330"
+                        target="_blank" rel="noopener noreferrer"><button class="btn-link">OIT C185</button></a>
+                -->
+                <a href="https://atos.cnj.jus.br/atos/detalhar/116" target="_blank" rel="noopener noreferrer"><button
+                        class="btn-link">Resolução 131 (menores)</button></a>
+            </nav>
+        </header>
+        <div class="vistos">
+            <div class="coluna">
+                <fieldset class="resultado resultado-vistos">
+                    <legend>Passaporte Diplomático</legend>
+                    <span id="padip"></span>
+                </fieldset>
+                <fieldset class="resultado resultado-vistos">
+                    <legend>Passaporte Oficial</legend>
+                    <span id="pasof"></span>
+                </fieldset>
+                <fieldset class="resultado resultado-vistos">
+                    <legend>Visto de Visita</legend>
+                    <span id="vivis"></span>
+                </fieldset>
+            </div>
+            <div class="coluna">
+                <fieldset class="resultado maritimo">
+                    <legend>Marítimo</legend>
+                    <span id="maritimo"></span>
+                </fieldset>
+            </div>
         </div>
-        <fieldset class="resultado">
-            <legend>Passaporte Diplomático</legend>
-            <span id="padip"></span>
-        </fieldset>
-        <fieldset class="resultado">
-            <legend>Passaporte Oficial</legend>
-            <span id="pasof"></span>
-        </fieldset>
-        <fieldset class="resultado">
-            <legend>Visto de Visita</legend>
-            <span id="vivis"></span>
-        </fieldset>
-         <fieldset class="resultado">
-            <legend>Marítimo</legend>
-            <span id="maritimo"></span>
-        </fieldset>
+        <div class="calcDatas">
+            <fieldset class="resultado">
+                <legend>Datas de referência</legend>
+                <div id="data_atual"></div>
+                <div id="noventa_dias_atras"></div>
+                <div id="sessenta_dias"></div>
+                <div id="noventa_dias"></div>
+                <div id="cento_oitenta_dias"></div>
+            </fieldset>
+            <fieldset class="resultado flex-center">
+                <legend>Cálculo de Datas</legend>
+                <div>Diferença de dias entre <input type="date" id="data1" onblur="calculaDiferencaDatas()"> e <input
+                        type="date" id="data2" onblur="calculaDiferencaDatas()"> :</div>
+                <div id="resultado_datas"> </span>
+            </fieldset>
+            <fieldset class="resultado flex-center">
+                <legend>Adicionar ou subtrair dias</legend>
+                <div>Data de referência: <input type="date" id="dataref" onblur="addSubDias()"></div>
+                <div>Dias:
+                    <input type="number" id="numDias" onblur="addSubDias()">
+                    <input type="radio" name="add_sub" id="add" value="add" checked onclick="addSubDias()"><label
+                        for="add" class="lbl_addsub">Adicionar</label>
+                    <input type="radio" name="add_sub" id="sub" value="sub" onclick="addSubDias()"><label for="sub"
+                        class="lbl_addsub">Subtrair</label>
+                </div>
+                <div id="resultado_dias"> </span>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset class="pep">
+                <legend>Decodificar Ponto de Imigração</legend>
+                <input type="number" name="pep" id="cod_pep">
+                <button onclick="decodificaPEP()">Decodificar</button>
+                <div id="decodifica_pep"></div>
+            </fieldset>
+        </div>
     </main>
+    <div class="modal">
+        <button class="close-modal">X</button>
+        <h1>AVISO DE RESPONSABILIDADE</h1>
+        <p>
+            Essa página tem a finalidade única de auxiliar na consulta de exigência de vistos para o Brasil, usando como
+            fonte o Quadro Geral de Regime de Vistos emitido pelo Ministério das Relações Exteriores. Esta não é uma fonte oficial e não deve
+            ser tratada como tal. Verifique sempre se a data de publicação do QGRV utilizado no site ainda é a mais
+            atual publicada. O autor não se responsabiliza por informações equivocadas ou pelas consequëncias de
+            sua utilização.
+        </p>
+    </div>
+    <div class="overlay"></div>
     <script src="script.js"></script>
+    <script src="pep.js"></script>
 </body>
 
 </html>

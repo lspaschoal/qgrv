@@ -1,238 +1,236 @@
 // Aviso de responsabilidade
-alert('Aviso de responsabilidade:\nEssa página tem a finalidade única de auxiliar na consulta de exigência de vistos para o Brasil, usando como fonte o Quadro Geral de Regime de Vistos emitido pelo Itamaraty.\nEsta não é uma fonte oficial e não deve ser tratada como tal. O autor não se responsabiliza por informações equivocadas ou pelas consequëncias de sua utilização.');
+//alert('Aviso de responsabilidade:\nEssa página tem a finalidade única de auxiliar na consulta de exigência de vistos para o Brasil, usando como fonte o Quadro Geral de Regime de Vistos emitido pelo Itamaraty.\nEsta não é uma fonte oficial e não deve ser tratada como tal. O autor não se responsabiliza por informações equivocadas ou pelas consequëncias de sua utilização.');
 
 // Array de Países
 var paises = [
-    ['Afeganistão', '1', '1', '1', '0'],
-    ['África do Sul', '9', '9', '8', '0'],
-    ['Albânia', '12', '12', '8*', '1'],
-    ['Alemanha', '12', '12', '8*', '0'],
-    ['Andorra', '1', '1', '8', '0'],
-    ['Angola', '12', '12', '1', '0'],
-    ['Antígua e Barbuda', '12', '12', '8', '0'],
-    ['Arábia Saudita', '1', '1', '1', '0'],
-    ['Argélia', '12', '12', '1', '0'],
-    ['Argentina', '15', '12', '8#', '0'],
-    ['Armênia', '12', '12', '8', '0'],
-    ['Austrália', '11', '1¹', '8', '0'],
-    ['Áustria', '12', '12', '8', '0'],
-    ['Azerbaijão', '12', '12', '1', '1'],
-    ['Bahamas', '12', '12', '8', '1'],
-    ['Bahrein', '1', '1', '1', '0'],
-    ['Bangladesh', '1', '1', '1', '1'],
-    ['Barbados', '12', '12', '8', '0'],
-    ['Belarus', '12', '12', '8', '0'],
-    ['Bélgica', '12', '12', '8*', '0'],
-    ['Belize', '12', '12', '8', '0'],
-    ['Benin', '12', '12', '1', '0'],
-    ['Bolívia', '9', '9', '8#', '0'],
-    ['Bósnia', '12', '12', '8', '1'],
-    ['Botsuana', '11', '11', '1', '0'],
-    ['Brunei', '1', '1', '1', '0'],
-    ['Bulgária', '9', '9', '8*', '0'],
-    ['Burkina Faso', '12', '12', '1', '0'],
-    ['Burundi', '12', '12', '1', '0'],
-    ['Butão', '1', '1', '1', '0'],
-    ['Cabo Verde', '12', '12', '1', '0'],
-    ['Camboja', '11', '11', '1', '0'],
-    ['Cameroun', '12', '12', '1', '0'],
-    ['Canadá', '12', '1²', '8', '0'],
-    ['Catar', '12', '12', '8', '0'],
-    ['Cazaquistão', '12', '12', '2', '1'],
-    ['Chade', '1', '1', '1', '0'],
-    ['Chile', '12', '12', '8#', '0'],
-    ['China', '11', '11', '1', '0'],
-    ['Chipre', '9', '9', '8*', '0'],
-    ['Colômbia', '15', '12', '8#', '0'],
-    ['Comores', '1', '1', '1', '0'],
-    ['Congo, República do', '12', '12', '1', '0'],
-    ['Congo, República Democrática do', '1', '1', '1', '1'],
-    ['Cook, Ilhas', '1', '1', '1', '0'],
-    ['Coréia do Norte', '1', '1', '1', '0'],
-    ['Coréia do Sul', '12', '12', '8', '1'],
-    ['Costa do Marfim', '12', '12', '1', '0'],
-    ['Costa Rica', '12', '12', '8', '0'],
-    ['Croácia', '12', '12', '8', '1'],
-    ['Cuba', '13', '1', '1', '0'],
-    ['Dinamarca', '12', '12', '8*', '0'],
-    ['Djibouti', '1', '1', '1', '0'],
-    ['Dominica', '12', '12', '8*', '0'],
-    ['Egito', '9', '9', '1', '0'],
-    ['El Salvador', '9', '9', '8', '0'],
-    ['Emirados Árabes', '9', '9', '8', '0'],
-    ['Equador', '15', '12', '8#', '0'],
-    ['Eritréia', '1', '1', '1', '0'],
-    ['Eslováquia', '12', '12', '8', '0'],
-    ['Eslovênia', '12', '12', '8*', '0'],
-    ['Espanha', '12', '12', '8', '1'],
-    ['Estados Unidos', '13', '1³', '8', '0'],
-    ['Estônia', '9', '9', '8*', '0'],
-    ['Etiópia', '12', '12', '1', '0'],
-    ['Fiji, Ilhas', '12', '12', '8', '0'],
-    ['Filipinas', '13', '13', '8', '1'],
-    ['Finlândia', '12', '12', '8', '0'],
-    ['França', '9', '9', '8*', '1'],
-    ['Gabão', '12', '12', '1', '0'],
-    ['Gâmbia', '1', '1', '1', '0'],
-    ['Gana', '12', '12', '1', '0'],
-    ['Geórgia', '12', '12', '8*', '1'],
-    ['Granada', '12', '12', '8', '0'],
-    ['Grécia', '12', '12', '8*', '0'],
-    ['Guatemala', '9', '9', '8', '0'],
-    ['Guiana', '11', '11', '8', '0'],
-    ['Guiné', '1', '1', '1', '0'],
-    ['Guiné-Bissau', '12', '12', '1', '0'],
-    ['Guiné Equatorial', '10', '10', '1', '0'],
-    ['Haiti', '12', '12', '1', '0'],
-    ['Honduras', '12', '12', '8', '0'],
-    ['Hong Kong', '-', '-', '8', '0'],
-    ['Hungria', '12', '12', '8*', '1'],
-    ['Iêmen', '1', '1', '1', '1'],
-    ['Índia', '9', '9', '1', '1'],
-    ['Indonésia', '19', '19', '2', '1'],
-    ['Irã', '11', '1', '1', '0'],
-    ['Iraque', '1', '1', '1', '0'],
-    ['Irlanda', '15', '15', '8', '0'],
-    ['Islândia', '9', '9', '8', '0'],
-    ['Israel', '15', '12', '8', '0'],
-    ['Itália', '12', '12', '8*', '0'],
-    ['Jamaica', '12', '12', '8', '0'],
-    ['Japão', '12', '12', '8', '0'],
-    ['Jordânia', '11', '11', '1', '1'],
-    ['Kiribati', '1', '1', '1', '1'],
-    ['Kosovo', '16', '16', '16', '0'],
-    ['Kuwait', '1', '1', '1', '0'],
-    ['Laos', '12', '12', '1', '0'],
-    ['Lesoto', '1', '1', '1', '0'],
-    ['Letônia', '9', '9', '8*', '0'],
-    ['Líbano', '12', '12', '1', '0'],
-    ['Libéria', '1', '1', '1', '0'],
-    ['Líbia', '1', '1', '1', '0'],
-    ['Liechtenstein', '1', '1', '8', '0'],
-    ['Lituânia', '12', '12', '8*', '0'],
-    ['Luxemburgo', '12', '12', '8*', '1'],
-    ['Macau', '–', '–', '8', '0'],
-    ['Macedônia', '12', '12', '8*', '0'],
-    ['Madagascar', '1', '1', '1', '1'],
-    ['Malásia', '12', '12', '8', '0'],
-    ['Malawi', '9', '9', '1', '0'],
-    ['Maldivas', '1', '1', '1', '1'],
-    ['Mali', '12', '12', '1', '0'],
-    ['Malta', '9', '9', '8*', '0'],
-    ['Marianas, Ilhas', '1', '1', '1', '0'],
-    ['Marrocos', '12', '12', '8', '0'],
-    ['Marshall, Ilhas', '1', '1', '1', '0'],
-    ['Maurício', '1', '1', '1', '0'],
-    ['Mauritânia', '12', '12', '1', '0'],
-    ['México', '12', '12', '8', '0'],
-    ['Micronésia', '1', '1', '1', '0'],
-    ['Moçambique', '12', '12', '1', '0'],
-    ['Moldova', '12', '12', '1', '1'],
-    ['Mônaco', '1', '1', '8', '0'],
-    ['Mongólia', '12', '12', '8', '0'],
-    ['Montenegro', '12', '12', '8*', '1'],
-    ['Myanmar', '19', '19', '1', '1'],
-    ['Namíbia', '12', '12', '8', '0'],
-    ['Nauru', '1', '1', '1', '0'],
-    ['Nepal', '12', '12', '1', '0'],
-    ['Nicarágua', '12', '12', '8', '0'],
-    ['Níger', '1', '1', '1', '0'],
-    ['Nigéria', '10', '10', '1', '1'],
-    ['Noruega', '12', '12', '8', '0'],
-    ['Nova Zelândia', '1', '1', '8', '0'],
-    ['Omã', '10', '10', '1', '0'],
-    ['Ordem Soberana e Militar de Malta', '15', '15', '8', '0'],
-    ['Países Baixos', '9', '9', '8*', '0'],
-    ['Palau', '1', '1', '1', '0'],
-    ['Palestina', '1', '1', '1', '0'],
-    ['Panamá', '12', '12', '8', '0'],
-    ['Papua Nova Guiné', '1', '1', '1', '0'],
-    ['Paquistão', '9', '1', '1', '1'],
-    ['Paraguai', '15', '12', '8#', '0'],
-    ['Peru', '15', '13', '8#', '0'],
-    ['Polônia', '12', '12', '8', '0'],
-    ['Portugal', '12', '12', '8', '0'],
-    ['Quênia', '12', '12', '1', '0'],
-    ['Quirguistão', '12', '12', '1', '0'],
-    ['Reino Unido', '15', '15', '8', '0'],
-    ['República Árabe Saaraui Democrática (RASD)', '17', '17', '17', '0'],
-    ['República Centro-Africana', '1', '1', '1', '0'],
-    ['República Dominicana', '12', '12', '1', '0'],
-    ['República Tcheca', '12', '12', '8*', '0'],
-    ['Romênia', '12', '12', '8', '0'],
-    ['Ruanda', '1', '1', '1', '0'],
-    ['Rússia', '12', '12', '8', '1'],
-    ['Salomão, Ilhas', '1', '1', '1', '0'],
-    ['Samoa Ocidental', '1', '1', '1', '0'],
-    ['San Marino', '15', '15', '8', '0'],
-    ['Santa Lúcia', '12', '12', '1', '0'],
-    ['São Cristóvão e Nevis', '12', '12', '8', '0'],
-    ['São Tomé e Príncipe', '12', '12', '1', '0'],
-    ['São Vicente e Granadinas', '12', '12', '8', '0'],
-    ['Senegal', '12', '12', '1', '0'],
-    ['Serra Leoa', '1', '1', '1', '0'],
-    ['Sérvia', '12', '12', '8', '0'],
-    ['Seicheles', '12', '12', '8*', '0'],
-    ['Singapura', '11', '11', '2', '0'],
-    ['Síria', '1', '1', '1', '0'],
-    ['Somália', '1', '1', '1', '0'],
-    ['Sri Lanka', '12@', '12@', '1', '1'],
-    ['Suazilândia', '1', '1', '1', '0'],
-    ['Sudão', '11', '11', '1', '0'],
-    ['Sudão do Sul', '1', '1', '1', '0'],
-    ['Suécia', '12', '12', '8*', '0'],
-    ['Suíça', '12', '12', '8*', '0'],
-    ['Suriname', '9', '9', '8', '0'],
-    ['Tajiquistão', '1', '1', '1', '0'],
-    ['Tailândia', '12', '12', '8', '0'],
-    ['Taiwan', '16', '16', '18', '0'],
-    ['Tanzânia', '12', '12', '1', '1'],
-    ['Timor-Leste', '1', '1', '1', '0'],
-    ['Togo', '12', '12', '1', '0'],
-    ['Tonga', '1', '1', '1', '0'],
-    ['Trinidad e Tobago', '12', '12', '8', '0'],
-    ['Tunísia', '15', '13', '8', '1'],
-    ['Turcomenistão', '1', '1', '1', '1'],
-    ['Turquia', '12', '12', '8', '0'],
-    ['Tuvalu', '1', '1', '1', '0'],
-    ['Ucrânia', '12', '12', '8*', '0'],
-    ['Uganda', '1', '1', '1', '0'],
-    ['Uruguai', '15', '15', '8#', '0'],
-    ['Uzbequistão', '12', '1', '1', '0'],
-    ['Vanuatu', '1', '1', '1', '1'],
-    ['Vaticano', '15', '15', '8', '0'],
-    ['Venezuela', '12', '9', '7#', '0'],
-    ['Vietnã', '12', '12', '1', '0'],
-    ['Zâmbia', '12', '12', '1', '0'],
-    ['Zimbábue', '1', '1', '1', '0']
+    ['Afeganistão', 'AFG', 'AF', '1', '1', '1', '0'],
+    ['África do Sul', 'ZAF', 'ZA', '5', '5', '4', '0'],
+    ['Albânia', 'ALB', 'AL', '4', '4', '4* ', '1'],
+    ['Alemanha', 'DEU', 'DE', '8', '8', '4* ', '0'],
+    ['Andorra', 'AND', 'AD', '1', '1', '4', '0'],
+    ['Angola', 'AGO', 'AO', '8', '8', '1', '0'],
+    ['Antígua e Barbuda', 'ATG', 'AG', '8', '8', '4', '1'],
+    ['Arábia Saudita', 'SAU', 'SA', '1', '1', '1', '0'],
+    ['Argélia', 'DZA', 'DZ', '8', '8', '1', '0'],
+    ['Argentina', 'ARG', 'AR', '11', '8', '4# ', '0'],
+    ['Armênia', 'ARM', 'AM', '8', '8', '4', '0'],
+    ['Austrália', 'AUS', 'AU', '1¹', '1¹ ', '4', '0'],
+    ['Áustria', 'AUT', 'AT', '8', '8', '4', '0'],
+    ['Azerbaijão', 'AZE', 'AZ', '8', '8', '1', '1'],
+    ['Bahamas', 'BHS', 'BS', '8', '8', '4', '1'],
+    ['Bahrein', 'BHR', 'BH', '8', '8', '1', '0'],
+    ['Bangladesh', 'BGD', 'BD', '1', '1', '1', '1'],
+    ['Barbados', 'BRB', 'BB', '8', '8', '4', '0'],
+    ['Belarus', 'BLR', 'BY', '8', '8', '4', '0'],
+    ['Bélgica', 'BEL', 'BE', '8', '8', '4* ', '0'],
+    ['Belize', 'BLZ', 'BZ', '8', '8', '4', '0'],
+    ['Benin', 'BEN', 'BJ', '8', '8', '1', '0'],
+    ['Bolívia', 'BOL', 'BO', '5', '5', '4# ', '0'],
+    ['Bósnia', 'BIH', 'BA', '8', '8', '4', '1'],
+    ['Botsuana', 'BWA', 'BW', '7', '7', '1', '0'],
+    ['Brunei', 'BRN', 'BN', '1', '1', '1', '0'],
+    ['Bulgária', 'BGR', 'BG', '5', '5', '4* ', '0'],
+    ['Burkina Faso', 'BFA', 'BF', '8', '8', '1', '0'],
+    ['Burundi', 'BDI', 'BI', '8', '8', '1', '0'],
+    ['Butão', 'BTN', 'BT', '1', '1', '1', '0'],
+    ['Cabo Verde', 'CPV', 'CV', '8', '8', '1', '0'],
+    ['Camboja', 'KHM', 'KH', '7', '7', '1', '0'],
+    ['Cameroun', 'CMR', 'CM', '8', '8', '1', '0'],
+    ['Canadá', 'CAN', 'CA', '1¹', '1¹ ', '4', '0'],
+    ['Catar', 'QAT', 'QA', '8', '8', '4', '0'],
+    ['Cazaquistão', 'KAZ', 'KZ', '8', '8', '2', '1'],
+    ['Chade', 'TCD', 'TD', '1', '1', '1', '0'],
+    ['Chile', 'CHL', 'CL', '8', '8', '4# ', '0'],
+    ['China', 'CHN', 'CN', '7', '7', '1', '0'],
+    ['Chipre', 'CYP', 'CY', '5', '5', '4* ', '0'],
+    ['Colômbia', 'COL', 'CO', '11', '8', '4# ', '0'],
+    ['Comores', 'COM', 'KM', '1', '1', '1', '0'],
+    ['Congo, República do', 'COG', 'CG', '8', '8', '1', '1'],
+    ['Congo, República Democrática do', 'COD', 'CD', '1', '1', '1', '0'],
+    ['Cook, Ilhas', 'COK', 'CK', '1', '1', '1', '0'],
+    ['Coréia do Norte', 'PRK', 'KP', '1', '1', '1', '0'],
+    ['Coréia do Sul', 'KOR', 'KR', '8', '8', '4', '1'],
+    ['Costa do Marfim', 'CIV', 'CI', '8', '8', '1', '0'],
+    ['Costa Rica', 'CRI', 'CR', '8', '8', '4', '0'],
+    ['Croácia', 'HRV', 'HR', '8', '8', '4', '1'],
+    ['Cuba', 'CUB', 'CU', '9', '1', '1', '0'],
+    ['Dinamarca', 'DNK', 'DK', '5', '5', '4* ', '0'],
+    ['Djibouti', 'DJI', 'DJ', '1', '1', '1', '0'],
+    ['Dominica', 'DMA', 'DM', '8', '8', '4* ', '0'],
+    ['Egito', 'EGY', 'EG', '5', '5', '1', '0'],
+    ['El Salvador', 'SLV', 'SV', '5', '5', '4', '0'],
+    ['Emirados Árabes', 'ARE', 'AE', '5', '5', '4', '0'],
+    ['Equador', 'ECU', 'EC', '11', '8', '4# ', '0'],
+    ['Eritréia', 'ERI', 'ER', '1', '1', '1', '0'],
+    ['Eslováquia', 'SVK', 'SK', '8', '8', '4', '0'],
+    ['Eslovênia', 'SVN', 'SI', '8', '8', '4* ', '0'],
+    ['Espanha', 'ESP', 'ES', '8', '8', '4', '1'],
+    ['Estados Unidos', 'USA', 'US', '1¹', '1¹ ', '4', '0'],
+    ['Estônia', 'EST', 'EE', '5', '5', '4* ', '0'],
+    ['Etiópia', 'ETH', 'ET', '8', '8', '1', '0'],
+    ['Fiji, Ilhas', 'FJI', 'FJ', '8', '8', '4', '0'],
+    ['Filipinas', 'PHL', 'PH', '9', '9', '4', '1'],
+    ['Finlândia', 'FIN', 'FI', '8', '8', '4', '0'],
+    ['França', 'FRA', 'FR', '5', '5', '4* ', '1'],
+    ['Gabão', 'GAB', 'GA', '8', '8', '1', '0'],
+    ['Gâmbia', 'GMB', 'GM', '1', '1', '1', '0'],
+    ['Gana', 'GHA', 'GH', '8', '8', '1', '0'],
+    ['Geórgia', 'GEO', 'GE', '8', '8', '4* ', '1'],
+    ['Granada', 'GRD', 'GD', '8', '8', '4', '0'],
+    ['Grécia', 'GRC', 'GR', '8', '8', '4* ', '0'],
+    ['Guatemala', 'GTM', 'GT', '5', '5', '4', '0'],
+    ['Guiana', 'GUY', 'GY', '7', '7', '4', '0'],
+    ['Guiné', 'GIN', 'GN', '1', '1', '1', '0'],
+    ['Guiné-Bissau', 'GNB', 'GW', '8', '8', '1', '0'],
+    ['Guiné Equatorial', 'GNQ', 'GQ', '6', '6', '1', '0'],
+    ['Haiti', 'HTI', 'HT', '8', '8', '1', '0'],
+    ['Honduras', 'HND', 'HN', '8', '8', '4', '0'],
+    ['Hong Kong', 'HKG', 'HK', '- ', '- ', '4', '0'],
+    ['Hungria', 'HUN', 'HU', '8', '8', '4* ', '1'],
+    ['Iêmen', 'YEM', 'YE', '1', '1', '1', '1'],
+    ['Índia', 'IND', 'IN', '5', '5', '1', '1'],
+    ['Indonésia', 'IDN', 'ID', '15', '15', '2', '1'],
+    ['Irã', 'IRN', 'IR', '7', '1', '1', '0'],
+    ['Iraque', 'IRQ', 'IQ', '1', '1', '1', '1'],
+    ['Irlanda', 'IRL', 'IE', '11', '11', '4', '0'],
+    ['Islândia', 'ISL', 'IS', '5', '5', '4', '0'],
+    ['Israel', 'ISR', 'IL', '11', '8', '4', '0'],
+    ['Itália', 'ITA', 'IT', '8', '8', '4* ', '0'],
+    ['Jamaica', 'JAM', 'JM', '8', '8', '4', '0'],
+    ['Japão', 'JPN', 'JP', '8', '8', '4', '0'],
+    ['Jordânia', 'JOR', 'JO', '7', '7', '1', '1'],
+    ['Kiribati', 'KIR', 'KI', '1', '1', '1', '1'],
+    ['Kosovo', 'XKX', 'XK', '12', '12', '12', '0'],
+    ['Kuwait', 'KWT', 'KW', '1', '1', '1', '0'],
+    ['Laos', 'LAO', 'LA', '8', '8', '1', '0'],
+    ['Lesoto', 'LSO', 'LS', '1', '1', '1', '0'],
+    ['Letônia', 'LVA', 'LV', '5', '5', '4* ', '0'],
+    ['Líbano', 'LBN', 'LB', '8', '8', '1', '0'],
+    ['Libéria', 'LBR', 'LR', '1', '1', '1', '0'],
+    ['Líbia', 'LBY', 'LY', '1', '1', '1', '0'],
+    ['Liechtenstein', 'LIE', 'LI', '1', '1', '4', '0'],
+    ['Lituânia', 'LTU', 'LT', '8', '8', '4* ', '0'],
+    ['Luxemburgo', 'LUX', 'LU', '8', '8', '4* ', '1'],
+    ['Macau', 'MAC', 'MO', '– ', '– ', '4', '0'],
+    ['Macedônia', 'MKD', 'MK', '8', '8', '4* ', '0'],
+    ['Madagascar', 'MDG', 'MG', '1', '1', '1', '1'],
+    ['Malásia', 'MYS', 'MY', '8', '8', '4', '0'],
+    ['Malawi', 'MWI', 'MW', '5', '5', '1', '0'],
+    ['Maldivas', 'MDV', 'MV', '1', '1', '1', '1'],
+    ['Mali', 'MLI', 'ML', '8', '8', '1', '0'],
+    ['Malta', 'MLT', 'MT', '5', '5', '4* ', '0'],
+    ['Marianas, Ilhas', 'MNP', 'MP', '1', '1', '1', '0'],
+    ['Marrocos', 'MAR', 'MA', '8', '8', '4', '0'],
+    ['Marshall, Ilhas', 'MHL', 'MH', '1', '1', '1', '1'],
+    ['Maurício', 'MUS', 'MU', '1', '1', '1', '0'],
+    ['Mauritânia', 'MRT', 'MR', '8', '8', '1', '0'],
+    ['México', 'MEX', 'MX', '8', '8', '4', '0'],
+    ['Micronésia', 'FSM', 'FM', '1', '1', '1', '0'],
+    ['Moçambique', 'MOZ', 'MZ', '8', '8', '1', '0'],
+    ['Moldova', 'MDA', 'MD', '8', '8', '1', '1'],
+    ['Mônaco', 'MCO', 'MC', '1', '1', '4', '0'],
+    ['Mongólia', 'MNG', 'MN', '8', '8', '4', '0'],
+    ['Montenegro', 'MNE', 'ME', '8', '8', '4* ', '1'],
+    ['Myanmar', 'MSR', 'MS', '15', '15', '1', '1'],
+    ['Namíbia', 'NAM', 'NA', '8', '8', '4', '0'],
+    ['Nauru', 'NRU', 'NR', '1', '1', '1', '0'],
+    ['Nepal', 'NPL', 'NP', '8', '8', '1', '0'],
+    ['Nicarágua', 'NIC', 'NI', '8', '8', '4', '0'],
+    ['Níger', 'NER', 'NE', '1', '1', '1', '0'],
+    ['Nigéria', 'NGA', 'NG', '6', '6', '1', '1'],
+    ['Noruega', 'NOR', 'NO', '8', '8', '4', '0'],
+    ['Nova Zelândia', 'NZL', 'NZ', '1', '1', '4', '0'],
+    ['Omã', 'OMN', 'OM', '6', '6', '1', '0'],
+    ['Ordem Soberana e Militar de Malta', 'OSMM', '', '11', '1', '4', '0'],
+    ['Países Baixos', 'NLD', 'NL', '5', '5', '4* ', '0'],
+    ['Palau', 'PLW', 'PW', '1', '1', '1', '0'],
+    ['Palestina', 'PSE', 'PS', '1', '1', '1', '0'],
+    ['Panamá', 'PAN', 'PA', '8', '8', '4', '0'],
+    ['Papua Nova Guiné', 'PNG', 'PG', '1', '1', '1', '0'],
+    ['Paquistão', 'PAK', 'PK', '5', '1', '1', '1'],
+    ['Paraguai', 'PRY', 'PY', '11', '8', '4# ', '0'],
+    ['Peru', 'PER', 'PE', '11', '9', '4# ', '0'],
+    ['Polônia', 'POL', 'PL', '8', '8', '4', '0'],
+    ['Portugal', 'PRT', 'PT', '8', '8', '4', '0'],
+    ['Quênia', 'KEN', 'KE', '8', '8', '1', '0'],
+    ['Quirguistão', 'KGZ', 'KG', '8', '8', '1', '0'],
+    ['Reino Unido', 'GBR', 'GB', '11', '11', '4', '0'],
+    ['República Árabe Saaraui Democrática (RASD)', 'ESH', 'EH', '13', '13', '13', '0'],
+    ['República Centro-Africana', 'CAF', 'CF', '1', '1', '1', '0'],
+    ['República Dominicana', 'DOM', 'DO', '8', '8', '3', '0'],
+    ['República Tcheca', 'CZE', 'CZ', '8', '8', '4* ', '0'],
+    ['Romênia', 'ROU', 'RO', '8', '8', '4', '0'],
+    ['Ruanda', 'RWA', 'RW', '1', '1', '1', '0'],
+    ['Rússia', 'RUS', 'RU', '8', '8', '4', '1'],
+    ['Salomão, Ilhas', 'SLB', 'SB', '1', '1', '1', '0'],
+    ['Samoa Ocidental', 'ASM', 'AS', '1', '1', '1', '0'],
+    ['San Marino', 'SMR', 'SM', '11', '11', '4', '0'],
+    ['Santa Lúcia', 'LCA', 'LC', '8', '8', '1', '0'],
+    ['São Cristóvão e Nevis', 'KNA', 'KN', '8', '8', '4', '0'],
+    ['São Tomé e Príncipe', 'STP', 'ST', '8', '8', '1', '0'],
+    ['São Vicente e Granadinas', 'VCT', 'VC', '8', '8', '4', '0'],
+    ['Senegal', 'SEN', 'SN', '8', '8', '1', '0'],
+    ['Serra Leoa', 'SLE', 'SL', '1', '1', '1', '0'],
+    ['Sérvia', 'SRB', 'RS', '8', '8', '4', '0'],
+    ['Seicheles', 'SYC', 'SC', '8', '8', '4* ', '0'],
+    ['Singapura', 'SGP', 'SG', '7', '7', '2', '0'],
+    ['Síria', 'SYR', 'SY', '1', '1', '1', '0'],
+    ['Somália', 'SOM', 'SO', '1', '1', '1', '0'],
+    ['Sri Lanka', 'LKA', 'LK', '8@ ', '8@ ', '1', '1'],
+    ['Suazilândia', 'SWZ', 'SZ', '1', '1', '1', '0'],
+    ['Sudão', 'SDN', 'SD', '7', '7', '1', '0'],
+    ['Sudão do Sul', 'SSD', 'SS', '1', '1', '1', '0'],
+    ['Suécia', 'SWE', 'SE', '8', '8', '4* ', '0'],
+    ['Suíça', 'CHE', 'CH', '8', '8', '4* ', '0'],
+    ['Suriname', 'SUR', 'SR', '5', '5', '4', '0'],
+    ['Tajiquistão', 'TJK', 'TJ', '1', '1', '1', '0'],
+    ['Tailândia', 'THA', 'TH', '8', '8', '4', '0'],
+    ['Taiwan', 'TWN', 'TW', '12', '12', '14', '0'],
+    ['Tanzânia', 'TZA', 'TZ', '8', '8', '1', '1'],
+    ['Timor-Leste', 'TLS', 'TL', '1', '1', '1', '0'],
+    ['Togo', 'TGO', 'TG', '8', '8', '1', '0'],
+    ['Tonga', 'TON', 'TO', '1', '1', '1', '0'],
+    ['Trinidad e Tobago', 'TTO', 'TT', '8', '8', '4', '0'],
+    ['Tunísia', 'TUN', 'TN', '11', '9', '4', '1'],
+    ['Turcomenistão', 'TKM', 'TM', '1', '1', '1', '1'],
+    ['Turquia', 'TUR', 'TR', '8', '8', '4', '0'],
+    ['Tuvalu', 'TUV', 'TV', '1', '1', '1', '0'],
+    ['Ucrânia', 'UKR', 'UA', '8', '8', '4* ', '0'],
+    ['Uganda', 'UGA', 'UG', '1', '1', '1', '0'],
+    ['Uruguai', 'URY', 'UY', '11', '11', '4# ', '0'],
+    ['Uzbequistão', 'UZB', 'UZ', '8', '1', '1', '0'],
+    ['Vanuatu', 'VUT', 'VU', '1', '1', '1', '1'],
+    ['Vaticano', 'VAT', 'VA', '11', '11', '4', '0'],
+    ['Venezuela', 'VEN', 'VE', '8', '5', '3#²', '0'],
+    ['Vietnã', 'VNM', 'VN', '8', '8', '1', '0'],
+    ['Zâmbia', 'ZMB', 'ZM', '8', '8', '1', '0'],
+    ['Zimbábue', 'ZWE', 'ZW', '1', '1', '1', '0']
 ];
 
-// Array de legenda
+// Array de legendas
 var legenda = [
-    ['#', 'Ingresso permitido com Cédula de Identidade Civil'],
+    ['#', 'Ingresso permitido com Cédula de Identidade Civil.'],
     ['@', 'Dispensa de Visto, por até 90 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, isenção pelo prazo da missão, inclusive para filhos dependentes com até 16 anos. Filhos dependentes, maiores de 16 anos, vistos por até 2 anos.'],
     ['*', 'Máximo 90 dias de estada a cada 180 dias.'],
     ['1', 'Visto exigido.'],
     ['2', 'Dispensa de Visto, por até 30 dias.'],
-    ['7', 'Dispensa de Visto, por até 60 dias. Passaportes venezuelanos são válidos por 5 anos adicionais a partir da data de sua expiração.'],
-    ['8', 'Dispensa de Visto, por até 90 dias.'],
-    ['9', 'Dispensa de Visto, por até 90 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Visto pelo prazo da missão.'],
-    ['10', 'Dispensa de Visto, por até 90 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, dispensa de visto para entrar no território brasileiro, mas deverão solicitar ao MRE visto pelo prazo da missão no período de 30 (trinta) dias da primeira entrada.'],
-    ['11', 'Dispensa de Visto, por até 30 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Isenção pelo prazo da missão.'],
-    ['12', 'Dispensa de Visto, por até 90 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Isenção pelo prazo da missão.'],
-    ['13', 'Dispensa de Visto, por até 180 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Isenção pelo prazo da missão.'],
-    ['14', 'Dispensa de Visto, por até 14 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Visto pelo prazo da missão.'],
-    ['15', 'Isenção de Visto, por prazo indeterminado, para funcionários acreditados e não acreditados.'],
-    ['16', 'O Brasil não mantém relações diplomáticas. Visto concedido por até 90 dias. Não se concede Visto Diplomático ou Visto Oficial.'],
-    ['17', 'O Brasil não mantém relações diplomáticas. Visto concedido sobre "laissez-passer", por até 90 dias. Não se concede Visto Diplomático ou Oficial.'],
-    ['18', 'O Brasil não mantém relações diplomáticas. VIVIS concedido com validade de até 5 anos, com estada de até 90 dias e permanência total de até 180 dias por ano, contados da primeira entrada. Não se concede vistos em PADIP, PASOF ou PASER taiwanês.'],
-    ['19', 'Dispensa de Visto, por até 30 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, dispensa de visto para entrar no território brasileiro, mas deverão solicitar ao MRE visto pelo prazo da missão no período de 30 (trinta) dias da primeira entrada.'],
-    ['21', 'Dispensa de Visto por até 14 dias, prorrogáveis por período máximo de 90 dias a cada 12 meses.'],
+    ['3', 'Dispensa de Visto, por até 60 dias.'],
+    ['4', 'Dispensa de Visto, por até 90 dias.'],
+    ['5', 'Dispensa de Visto, por até 90 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Visto pelo prazo da missão.'],
+    ['6', 'Dispensa de Visto, por até 90 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, dispensa de visto para entrar no território brasileiro, mas deverão solicitar ao MRE visto pelo prazo da missão no período de 30 (trinta) dias da primeira entrada.'],
+    ['7', 'Dispensa de Visto, por até 30 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Isenção pelo prazo da missão.'],
+    ['8', 'Dispensa de Visto, por até 90 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Isenção pelo prazo da missão.'],
+    ['9', 'Dispensa de Visto, por até 180 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Isenção pelo prazo da missão.'],
+    ['10', 'Dispensa de Visto, por até 14 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, Visto pelo prazo da missão.'],
+    ['11', 'Isenção de Visto, por prazo indeterminado, para funcionários acreditados e não acreditados.'],
+    ['12', 'O Brasil não mantém relações diplomáticas. Visto concedido por até 90 dias. Não se concede Visto Diplomático ou Visto Oficial.'],
+    ['13', 'O Brasil não mantém relações diplomáticas. Visto concedido sobre "laissez-passer", por até 90 dias. Não se concede Visto Diplomático ou Oficial.'],
+    ['14', 'O Brasil não mantém relações diplomáticas. VIVIS concedido com validade de até 5 anos, com estada de até 90 dias e permanência total de até 180 dias por ano, contados da primeira entrada. Não se concede vistos em PADIP, PASOF ou PASER taiwanês.'],
+    ['15', 'Dispensa de Visto, por até 30 dias, para funcionários não acreditados no Brasil. Para funcionários acreditados, dispensa de visto para entrar no território brasileiro, mas deverão solicitar ao MRE visto pelo prazo da missão no período de 30 (trinta) dias da primeira entrada.'],
+    ['16', 'Dispensa de Visto por até 14 dias, prorrogáveis por período máximo de 90 dias a cada 12 meses.'],
     ['¹', 'Portadores de PADIP e PASOF em viagem com propósito de visita farão jus à isenção do Decreto nº 9.731/2019.'],
-    ['²', 'Portadores de PADIP e PASOF em viagem com propósito de visita farão jus à isenção do Decreto nº 9.731/2020.'],
-    ['³', 'Portadores de PADIP e PASOF em viagem com propósito de visita farão jus à isenção do Decreto nº 9.731/2021.'],
-    ['-', 'Informação não disponível. Consultar um servidor.'],
-
+    ['²', 'Passaportes venezuelanos tem validade estendida por 5 anos a partir da data de sua expiração.'],
+    ['-', 'Informação não disponível.'],
 ];
 
 /*
@@ -240,7 +238,7 @@ var legenda = [
 */
 function setSeletor() {
     for (i = 0; i < paises.length; i++) {
-        document.getElementById('nome').innerHTML += "<option value='" + paises[i][0] + "'>" + paises[i][0] + "</option>";
+        document.getElementById('pais').innerHTML += "<option value='" + paises[i][1] + "'>" + paises[i][0] + "</option>";
     }
 }
 // Chamando a função na inicialização da página
@@ -249,7 +247,7 @@ setSeletor();
 // Retorna o índice do país informado
 function getIndice(pais) {
     for (i = 0; i < paises.length; i++) {
-        if (paises[i][0] == pais) {
+        if (paises[i][1] == pais) {
             return i;
         }
     }
@@ -258,7 +256,9 @@ function getIndice(pais) {
 
 // Decodifica a legenda
 function decodifica(leg) {
-    var numeral = '', simbolo = [], resultado = '';
+    var numeral = '',
+        simbolo = [],
+        resultado = '';
     for (i = 0; i < leg.length; i++) {
         switch (leg[i]) {
             case '0':
@@ -277,16 +277,17 @@ function decodifica(leg) {
                 simbolo.push(leg[i]);
         }
     }
+
     // Lendo a parte numeral
-    for (i = 0; i < legenda.length; i++) {
+    for (let i = 0; i < legenda.length; i++) {
         if (legenda[i][0] == numeral) {
             resultado += legenda[i][1];
         }
     }
     // Lendo os símbolos
-    for (i = 0; i < simbolo.length; i++) {
-        for (j = 0; j < legenda.length; j++) {
-            if (legenda[j][0] == simbolo[i]) {
+    for (let i = 0; i < simbolo.length; i++) {
+        for (let j = 0; j < legenda.length; j++) {
+            if (legenda[j][0] == simbolo[i][0]) {
                 resultado += ' ' + legenda[j][1];
             }
         }
@@ -296,11 +297,21 @@ function decodifica(leg) {
 
 // Função limpar
 function limpar() {
-    document.getElementById('nome').value = 'default';
+    document.getElementById('pais').value = 'default';
+    document.getElementById('bandeira').src = 'bandeiras/branca.png';
+    document.getElementById('bandeira').hidden = true;
     document.getElementById('padip').innerHTML = "";
     document.getElementById('pasof').innerHTML = "";
     document.getElementById('vivis').innerHTML = "";
     document.getElementById('maritimo').innerHTML = "";
+    document.getElementById('data1').value = "";
+    document.getElementById('data2').value = "";
+    document.getElementById('dataref').value = "";
+    document.getElementById('numDias').value = "";
+    document.getElementById('resultado_datas').innerHTML = "";
+    document.getElementById('resultado_dias').innerHTML = "";
+    document.getElementById('cod_pep').value = "";
+    document.getElementById('decodifica_pep').innerHTML = "";
 }
 
 // Método de consulta do país
@@ -309,22 +320,29 @@ function consulta(pais) {
         limpar();
     } else {
         indicePais = getIndice(pais);
+        // Bandeira
+        if (document.getElementById('pais').value == 'OSMM') {
+            document.getElementById('bandeira').src = "bandeiras/branca.png";
+        } else {
+            document.getElementById('bandeira').hidden = false;
+            document.getElementById('bandeira').src = "bandeiras/" + document.getElementById('pais').value + ".png";
+        }
         // Campo PADIP
-        document.getElementById('padip').innerHTML = decodifica(paises[indicePais][1]);
+        document.getElementById('padip').innerHTML = decodifica(paises[indicePais][3]);
         // Campo PASOF
-        document.getElementById('pasof').innerHTML = decodifica(paises[indicePais][2]);
+        document.getElementById('pasof').innerHTML = decodifica(paises[indicePais][4]);
         // Campo VIVIS
-        document.getElementById('vivis').innerHTML = decodifica(paises[indicePais][3]);
+        document.getElementById('vivis').innerHTML = decodifica(paises[indicePais][5]);
         // Campo Marítimo
-        if (paises[indicePais][4] == '1') {
-            document.getElementById('maritimo').innerHTML = pais + " faz parte da convenção OIT 185.<br>";
+        if (paises[indicePais][6] == '1') {
+            document.getElementById('maritimo').innerHTML = paises[indicePais][0] + " faz parte da convenção OIT 185.<br>";
             if (document.getElementById('vivis').innerHTML.indexOf('Visto exigido') > -1) {
                 document.getElementById('maritimo').innerHTML += imprimeMaritimo(true, true);
             } else {
                 document.getElementById('maritimo').innerHTML += imprimeMaritimo(true, false);
             }
         } else {
-            document.getElementById('maritimo').innerHTML = pais + " NÃO faz parte da convenção OIT 185.<br>"
+            document.getElementById('maritimo').innerHTML = paises[indicePais][0] + " NÃO faz parte da convenção OIT 185.<br>"
             if (document.getElementById('vivis').innerHTML.indexOf('Visto exigido') > -1) {
                 document.getElementById('maritimo').innerHTML += imprimeMaritimo(false, true);
             } else {
@@ -346,8 +364,7 @@ function imprimeMaritimo(sid, necessita_visto) {
     texto += "<p>";
     if (sid == true) {
         texto += "Se o viajante estiver portando a Seafearer's ID (SID):<br>" +
-            "<ul><li>Para estadia de até 90 dias classificar com o código 118.</li>" +
-            "<li>Para estadia entre 90 e 180 dias classificar com o código 130.</li>" +
+            "<ul><li>Para estadia de até 180 dias classificar com o código 130 e prazo 180 dias.</li>" +
             "<li>No caso de estadia SUPERIOR a 180 dias o VISTO É NECESSÁRIO.</li></ul></p>" +
             "<p>Se o viajante não estiver portando a Seafearer's ID (SID):<br>";
     }
@@ -355,8 +372,63 @@ function imprimeMaritimo(sid, necessita_visto) {
         texto += "<ul><li><b>Visto EXIGIDO.</b></li></ul>";
     } else {
         texto += "<ul><li>Para estadia de até 90 dias, comprovada pela carta da empresa para a qual irá trabalhar, classificar com o código 118.</li>" +
-            "<li>Para estadia SUPERIOR a 90 dias o VISTO É NECESSÁRIO.</li></ul>";
+            "<li>Para estadia SUPERIOR a 90 dias o VISTO É NECESSÁRIO. Consultar o servidor de plantão.</li></ul>";
     }
     texto += '</p>';
     return texto;
 }
+
+/*
+Calculadora de datas
+*/
+var hoje = new Date();
+var noventa_dias_atras = new Date();
+noventa_dias_atras.setDate(hoje.getDate() - 90);
+var sessenta_dias = new Date();
+sessenta_dias.setDate(hoje.getDate() + 60);
+var noventa_dias = new Date();
+noventa_dias.setDate(hoje.getDate() + 90);
+var cento_oitenta_dias = new Date();
+cento_oitenta_dias.setDate(hoje.getDate() + 180);
+document.getElementById('data_atual').innerHTML = 'A data atual é: ' + doisDigitos(hoje.getDate()) + '/' + doisDigitos(hoje.getMonth() + 1) + '/' + hoje.getFullYear();
+document.getElementById('noventa_dias_atras').innerHTML = 'A data a 90 dias atrás era: ' + doisDigitos(noventa_dias_atras.getDate()) + '/' + doisDigitos(noventa_dias_atras.getMonth() + 1) + '/' + noventa_dias_atras.getFullYear();
+document.getElementById('sessenta_dias').innerHTML = 'A data daqui a 60 dias será: ' + doisDigitos(sessenta_dias.getDate()) + '/' + doisDigitos(sessenta_dias.getMonth() + 1) + '/' + sessenta_dias.getFullYear();
+document.getElementById('noventa_dias').innerHTML = 'A data daqui a 90 dias será: ' + doisDigitos(noventa_dias.getDate()) + '/' + doisDigitos(noventa_dias.getMonth() + 1) + '/' + noventa_dias.getFullYear();
+document.getElementById('cento_oitenta_dias').innerHTML = 'A data daqui a 180 dias será: ' + doisDigitos(cento_oitenta_dias.getDate()) + '/' + doisDigitos(cento_oitenta_dias.getMonth() + 1) + '/' + cento_oitenta_dias.getFullYear();
+
+function doisDigitos(numero) {
+    return (numero > 9) ? numero : '0' + numero;
+}
+
+function calculaDiferencaDatas() {
+    if (document.getElementById('data1').value !== "" && document.getElementById('data2').value !== "") {
+        let data1 = new Date(Date.parse(document.getElementById('data1').value.replace(/-/g, '\/')));
+        let data2 = new Date(Date.parse(document.getElementById('data2').value.replace(/-/g, '\/')));
+        let dias = Math.round((data2 - data1) / 86400000);
+        document.getElementById('resultado_datas').innerHTML = dias;
+    }
+}
+
+function addSubDias() {
+    if (document.getElementById('dataref').value != '' && document.getElementById('numDias').value != '') {
+        let data = new Date(Date.parse(document.getElementById('dataref').value.replace(/-/g, '\/')));
+        let dias = document.getElementById('numDias').value;
+        (document.getElementById('add').checked) ? data.setDate(data.getDate() + Number(dias)): data.setDate(data.getDate() - dias);
+        document.getElementById('resultado_dias').innerHTML = data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear();
+    }
+}
+
+// modal
+const closeModal = function () {
+    document.querySelector('.modal').classList.add('hidden');
+    document.querySelector('.overlay').classList.add('hidden');
+};
+
+document.querySelector('.close-modal').addEventListener('click', closeModal);
+document.querySelector('.overlay').addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !document.querySelector('.modal').classList.contains('hidden')) {
+        closeModal();
+    }
+});
